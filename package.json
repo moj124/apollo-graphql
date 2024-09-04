@@ -1,0 +1,22 @@
+{
+  "name": "apollo-graphql",
+  "version": "1.0.0",
+  "description": "a graphQL API using mySQL",
+  "main": "./src/index.ts",
+  "scripts": {
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^4.11.0",
+    "graphql": "^16.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.3",
+    "typescript": "^5.5.4"
+  }
+}
