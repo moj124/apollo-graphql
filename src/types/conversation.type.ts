@@ -1,8 +1,8 @@
 type Conversation = {
     id: string,
     name: string,
-    created_at: Date,
-    updated_at: Date | null,
-    deleted_at: Date | null,
+    createdAt: Date,
+    updatedAt: Date | null,
+    deletedAt: Date | null,
 }
 export default Conversation;

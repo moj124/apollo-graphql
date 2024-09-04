@@ -1,39 +1,41 @@
 export const typeDefs = `#graphql
+    scalar Date
+
     type User {
         id: ID!,
         email: String!,
         name: String!,
         password: String!,
-        created_at: Date!,
-        updated_at: Date,
-        deleted_at: Date,
+        createdAt: Date!,
+        updatedAt: Date,
+        deletedAt: Date,
     }
 
     type Message {
         id: ID!,
-        user_id: ID!,
-        conversation_id: ID!,
+        userId: ID!,
+        conversationId: ID!,
         content: String!,
-        created_at: Date!,
-        updated_at: Date,
-        deleted_at: Date,
+        createdAt: Date!,
+        updatedAt: Date,
+        deletedAt: Date,
     }
 
     type Conversation {
         id: ID!,
         name: String!,
-        created_at: Date!,
-        updated_at: Date,
-        deleted_at: Date,
+        createdAt: Date!,
+        updatedAt: Date,
+        deletedAt: Date,
     }
 
     type Participant {
         id: ID!,
-        user_id: ID!,
-        conversation_id: ID!,
-        created_at: Date!,
-        updated_at: Date,
-        deleted_at: Date,
+        userId: ID!,
+        conversationId: ID!,
+        createdAt: Date!,
+        updatedAt: Date,
+        deletedAt: Date,
     }
 
     type Query {
@@ -41,5 +43,18 @@ export const typeDefs = `#graphql
         messages: [Message],
         conversations: [Conversation],
         participants: [Participant],
+        findUser(id: ID!): User,
+        findUserByEmail(email: String!): User,
+        findUsersByName(name: String!): [User],
+        findMessage(id: ID!): Message,
+        findMessagesByUser(id: ID!): [Message],      
+        findConversation(id: ID!): Conversation,
+        findParticipants(id: ID!): Participant,
+    }
+
+    type Mutation {
+        createMessage(content: String!, userId: ID!, conversationId: ID!): Message!,
+        createUser(emaill: String!, name: String!, password: String!): User!,
+        createConversation(name: String!): Conversation!,
     }
 `

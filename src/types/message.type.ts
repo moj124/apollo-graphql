@@ -1,10 +1,10 @@
 type Message = {
     id: string,
-    user_id: string,
-    conversation_id: string,
+    userId: string,
+    conversationId: string,
     content: string,
-    created_at: Date,
-    updated_at: Date | null,
-    deleted_at: Date | null,
+    createdAt: Date,
+    updatedAt: Date | null,
+    deletedAt: Date | null,
 }
 export default Message;
